@@ -13,7 +13,7 @@ import tensorflow as tf
 
 app = FastAPI(title="Backend Portfolio MALT - IA Multi-Modèles")
 
-model_cancer = tf.keras.models.load_model("models/best_model.keras")
+model_cancer = tf.keras.models.load_model("models/best_model.h5")
 model_fraude_xgb = joblib.load("models/xgboost_best.joblib")
 
 
