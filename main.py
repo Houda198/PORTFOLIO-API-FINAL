@@ -1,21 +1,24 @@
 import os
-# --- CONFIGURATION FORCEE AVANT TOUT IMPORT TENSORFLOW ---
 os.environ["TF_USE_LEGACY_KERAS"] = "1"
 
 from fastapi import FastAPI, UploadFile, File
 from pydantic import BaseModel
 from typing import List
 import joblib
-import tensorflow as tf
 import numpy as np
 from PIL import Image
 import io
+
+
+
+import tensorflow as tf
+import tf_keras
 
 app = FastAPI(title="Backend Portfolio MALT - IA Multi-Modèles")
 
 # --- 1. CHARGEMENT DES MODÈLES ---
 # On utilise l'ancienne méthode de chargement pour être sûr
-model_cancer = tf.keras.models.load_model("models/best_model.keras")
+model_cancer = tf_keras.models.load_model("models/best_model.keras")
 model_fraude_xgb = joblib.load("models/xgboost_best.joblib")
 
 # --- 2. MODÈLE DE DONNÉES (INPUT) ---
