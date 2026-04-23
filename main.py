@@ -81,3 +81,9 @@ def predict_fraude(data: FraudeInput):
             "error": str(e), 
             "suggestion": "Vérifie que le nombre d'éléments dans 'features' correspond exactement à ce que le modèle XGBoost attend."
         }
+    
+if __name__ == "__main__":
+    import uvicorn
+    import os
+    port = int(os.environ.get("PORT", 10000)) 
+    uvicorn.run(app, host="0.0.0.0", port=port)
