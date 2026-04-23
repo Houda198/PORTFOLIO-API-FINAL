@@ -1,5 +1,5 @@
 import os
-os.environ["TF_USE_LEGACY_KERAS"] = "1"  
+#os.environ["TF_USE_LEGACY_KERAS"] = "1"  
 
 from fastapi import FastAPI, UploadFile, File
 from pydantic import BaseModel
@@ -13,7 +13,7 @@ import tensorflow as tf
 
 app = FastAPI(title="Backend Portfolio MALT - IA Multi-Modèles")
 
-model_cancer = tf.keras.models.load_model("models/best_model.h5")
+model_cancer = tf.keras.models.load_model("models/best_model.keras")
 model_fraude_xgb = joblib.load("models/xgboost_best.joblib")
 
 
