@@ -7,7 +7,7 @@ WORKDIR /app
 # 3. Installer les dépendances système (pour l'image et XGBoost)
 RUN apt-get update && apt-get install -y \
     build-essential \
-    libgl1-mesa-glx \
+    libgl1 \
     && rm -rf /var/lib/apt/lists/*
 
 # 4. Copier le fichier requirements.txt
