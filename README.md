@@ -98,6 +98,8 @@ docker run -p 10000:10000 ia-api-portfolio
 
 ![Cancer test](image-1.png)
 
+![shipping-delay test](image-2.png)
+
 ## Lancer avec Python : 
 
 python -m venv venv
