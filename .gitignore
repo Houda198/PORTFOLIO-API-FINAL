@@ -1,3 +1,4 @@
+# --- Base Portfolio API ---
 __pycache__/
 *.pyc
 .env
@@ -5,3 +6,13 @@ __pycache__/
 archive/
 scripts/
 *.log
+
+# --- Ajouts Projet Shipping ---
+# On ignore le dossier des graphiques et rapports d'évaluation
+outputs/
+
+# On ignore les données de test spécifiques qui pèsent lourd
+models/test_data_v5.pkl
+
+# Fichiers système divers
+.DS_Store

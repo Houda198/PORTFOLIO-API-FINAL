@@ -4,10 +4,11 @@ FROM python:3.9-slim
 # 2. Définir le dossier de travail dans le serveur
 WORKDIR /app
 
-# 3. Installer les dépendances système (pour l'image et XGBoost)
+# 3. Installer les dépendances système (Indispensable pour XGBoost, LightGBM et OpenCV)
 RUN apt-get update && apt-get install -y \
     build-essential \
     libgl1 \
+    libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
 # 4. Copier le fichier requirements.txt
